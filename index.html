@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Napi ige</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <b>Napi ige (alapértelmezett fordítás):</b>
+    <div id="napi_ige"></div>
+    <br />
+    <br />
+
+    <b>Napi ige (Revidiált Károli):</b>
+    <div id="napi_ige_kg"></div>
+    <br />
+    <br />
+
+    <b>Napi ige (Magyar Bibliatársulat újfordítású Bibliája, 2014):</b>
+    <div id="napi_ige_ruf"></div>
+    <br />
+    <br />
+
+    <b>Napi ige, adott datumra:</b>
+    <div id="napi_ige_fix"></div>
+    <input type="text" id="myref" value="1985-04-17" />
+    <button
+      onClick="napi_ige('napi_ige_fix', 'KG', document.getElementById('myref').value)"
+    >
+      Frissít
+    </button>
+
+    <br />
+    <br />
+
+    <script src="napiige.js"></script>
+    <script>
+      window.addEventListener("load", function () {
+        napi_ige("napi_ige");
+        napi_ige("napi_ige_kg", "KG");
+        napi_ige("napi_ige_ruf", "RUF");
+        napi_ige("napi_ige_fix", "KG", "1985-04-17");
+      });
+    </script>
+  </body>
+</html>
