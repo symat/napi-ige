@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Napi ige</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <a href="index.html">go back</a>
+    <br />
+    <br />
+
+    <b>Ordered list:</b>
+    <br />
+    <div id="ordered"></div>
+    <br />
+    <br />
+    <b>Randomized list:</b>
+    <br />
+    <div id="randomized"></div>
+    <br />
+    <br />
+
+    <script src="napiige.js"></script>
+
+    <script>
+      function printOrderedArray() {
+        napi_ige_quote_locations.sort();
+        return printArrayDefinition(napi_ige_quote_locations);
+      }
+
+      function printRandomArray() {
+        napi_ige_quote_locations.sort();
+        shuffleArray(napi_ige_quote_locations);
+        return printArrayDefinition(napi_ige_quote_locations);
+      }
+
+      function printArrayDefinition(array) {
+        var text = "<br/><br/>var napi_ige_quote_locations = [";
+        for (var i = 0; i < array.length; i++) {
+          text += '<br/>  "' + array[i] + '",';
+        }
+        text += "<br/>];<br/><br/>";
+        return text;
+      }
+
+      /* Randomize array in-place using Durstenfeld shuffle algorithm */
+      function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
+        }
+      }
+
+      window.addEventListener("load", function () {
+        document.getElementById("ordered").innerHTML = printOrderedArray();
+        document.getElementById("randomized").innerHTML = printRandomArray();
+      });
+    </script>
+  </body>
+</html>

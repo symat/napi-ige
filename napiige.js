@@ -1,9 +1,7 @@
-var napi_ige_quote_locations = [
-  "1 Kor 13,10-13",
-  "1Kor13,10-11",
-  "1Kor13,10",
-  "1Kor13,10-12"
-];
+// when you need to update this list, you can use randomize_order.html
+// to generate new radnom order (or to have an ordered list making the
+// finding of duplicates easier)
+var napi_ige_quote_locations = ["Péld. 15,3", "1 Kor. 13,10-12"];
 
 function napi_ige_get_quote_location_for_day(date) {
   var base = new Date("1900-01-01");
@@ -17,21 +15,25 @@ function napi_ige_get_quote_location_for_day(date) {
 
 function napi_ige(
   targetElement,
-  translation = "KG",
-  dateString = "now",
+  translation = "RUF",
+  dateString = "today",
+  defaultText = "Bízzad az Úrra a te dolgaidat; és a te gondolatid véghez mennek. (Péld. 16,3)",
   loadingText = "..."
 ) {
   document.getElementById(targetElement).innerHTML = loadingText;
   var quote_location = napi_ige_get_quote_location_for_day(new Date());
-  if (dateString !== "now") {
+  if (dateString !== "today") {
     quote_location = napi_ige_get_quote_location_for_day(new Date(dateString));
   }
   var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
+
+  xhr.onload = function () {
+    if (xhr.status < 200 || xhr.status >= 300) {
+      document.getElementById(targetElement).innerHTML = defaultText;
+    } else {
+      // show the result
       var response = JSON.parse(xhr.responseText);
       var text = "";
-      console.log(response);
       if ("valasz" in response && "versek" in response["valasz"]) {
         var versek = response["valasz"]["versek"];
 
@@ -39,12 +41,23 @@ function napi_ige(
           if (i > 0) {
             text += " ";
           }
-          text += versek[i]["szoveg"];
+          if ("szoveg" in versek[i]) {
+            text += versek[i]["szoveg"];
+          } else {
+            document.getElementById(targetElement).innerHTML = defaultText;
+            return;
+          }
         }
+      } else {
+        document.getElementById(targetElement).innerHTML = defaultText;
       }
       text += " (" + quote_location + ")";
       document.getElementById(targetElement).innerHTML = text;
     }
+  };
+
+  xhr.onerror = function () {
+    document.getElementById(targetElement).innerHTML = defaultText;
   };
   xhr.open(
     "GET",
