@@ -3,7 +3,7 @@
 // finding of duplicates easier)
 var napi_ige_quote_locations = ["Péld. 15,3", "1 Kor. 13,10-12"];
 
-function napi_ige_get_quote_location_for_day(date) {
+function napiIgeGetQuoteLocationForDay(date) {
   var base = new Date("1900-01-01");
   var millisecs_in_a_day = 1000 * 60 * 60 * 24;
   var days_since_base = Math.abs(
@@ -13,7 +13,7 @@ function napi_ige_get_quote_location_for_day(date) {
   return napi_ige_quote_locations[index];
 }
 
-function napi_ige(
+function napiIge(
   targetElement,
   translation = "RUF",
   dateString = "today",
@@ -21,9 +21,9 @@ function napi_ige(
   loadingText = "..."
 ) {
   document.getElementById(targetElement).innerHTML = loadingText;
-  var quote_location = napi_ige_get_quote_location_for_day(new Date());
+  var quote_location = napiIgeGetQuoteLocationForDay(new Date());
   if (dateString !== "today") {
-    quote_location = napi_ige_get_quote_location_for_day(new Date(dateString));
+    quote_location = napiIgeGetQuoteLocationForDay(new Date(dateString));
   }
   var xhr = new XMLHttpRequest();
 

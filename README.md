@@ -31,13 +31,13 @@ Basic example:
 
     <script>
       window.addEventListener("load", function () {
-        napi_ige("myref");
+        napiIge("myref");
       });
     </script>
   </body>
 ```
 
-The function `napi_ige` has the following parameters:
+The function `napiIge` has the following parameters:
 
 - `targetElement`: id of the DOM element where the quote should be loaded
 - `translation`: id of the supported bible translations, see: https://szentiras.hu/forditasok (default: `"RUT"`)
