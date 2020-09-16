@@ -8,12 +8,12 @@ The library is fetching the texts from the https://szentiras.hu, we owe thanks t
 
 ## Download
 
-The latest stable version is: `1.0.0`
+There is no stable version yet, the latest unstable version is: `1.0.0-rc.2`
 
 You can use jsdelivr, a free CDN to download the minified javascript library:
 
 ```
-   <script src="https://cdn.jsdelivr.net/gh/symat/napi-ige@1.0.0/napiige.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/symat/napi-ige@1.0.0-rc.2/napiige.min.js"></script>
 ```
 
 ## How it works
@@ -27,7 +27,7 @@ Basic example:
     <b>Quote:</b>
     <div id="myref"></div>
 
-    <script src="https://cdn.jsdelivr.net/gh/symat/napi-ige@1.0.0/napiige.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/symat/napi-ige@1.0.0-rc.2/napiige.min.js"></script>
 
     <script>
       window.addEventListener("load", function () {
