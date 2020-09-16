@@ -40,9 +40,13 @@ Basic example:
 The function `napi_ige` has the following parameters:
 
 - `targetElement`: id of the DOM element where the quote should be loaded
-- `translation`: id of the supported bible translations, see: https://szentiras.hu/forditasok (default: `"KG"`)
+- `translation`: id of the supported bible translations, see: https://szentiras.hu/forditasok (default: `"RUT"`)
 - `dateString`: date in ISO string format (e.g. `"1985-04-17"`), or `"today"` for the current date (default: `"today"`)
 - `defaultText`: the text to show if any error happens during fetching the text from the Bible, e.g. if https://szentiras.hu is down (default: `"Bízzad az Úrra a te dolgaidat; és a te gondolatid véghez mennek. (Péld 16,3)"`)
 - `loadingText`: the text to show until the quote is fetched (default: `"..."`)
 
 You can fin more examples in the [index.html](index.html).
+
+## License
+
+The 3-Clause BSD License (see [license.md](license.md))
