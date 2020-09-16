@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "homepage": "https://github.com/symat/napi-ige",
   "description": "a small javascrip library to get daily Hungarian Bible quotes",
-  "main": "napiige.js",
+  "main": "./napiige.js",
   "scripts": {
     "start": "serve",
     "build": "echo This is a static template, there is no bundler or bundling involved!"
