@@ -37,7 +37,7 @@ Basic example:
     <b>Quote:</b>
     <div id="myref"></div>
 
-    <script src="https://cdn.jsdelivr.net/gh/symat/napi-ige@1.0.0-rc.2/napiige.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/symat/napi-ige@1/napiige.min.js"></script>
 
     <script>
       window.addEventListener("load", function () {
