@@ -3,7 +3,7 @@
 **A small javascrip library to get daily Hungarian Bible quotes.**
 
 The basic idea is to provide a very small javascript function that can be embedded into
-any webpage, without requiring any dependency or framework. It is only a few KB and
+any webpage, without requiring any dependency or framework. It is only 3 KB and
 compatible even with the very old javascript standards.
 
 ## Special Thanks
@@ -17,11 +17,14 @@ The latest stable version is: `1.0.0`
 You can use jsdelivr, a free CDN to download the minified javascript library:
 
 ```
-   <script src="https://cdn.jsdelivr.net/gh/symat/napi-ige@1/napiige.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/symat/napi-ige@1.0.0/napiige.min.js"></script>
 ```
 
-(by refrencing `1`, you will get the latest `1.x.y` version, which is always backward compatible
-with 1.0.0, but also contains extra features and bugfixes)
+Alternatively, by refrencing `1`, you will get the latest `1.x.y` version, which is always backward compatible with 1.0.0, but also contains extra features and bugfixes:
+
+```
+   <script src="https://cdn.jsdelivr.net/gh/symat/napi-ige@1/napiige.min.js"></script>
+```
 
 ## How it works
 
