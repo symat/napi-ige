@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Napi ige</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <a href="/index.html">go back</a>
+    <br />
+    <br />
+    <label for="books">Book:</label>
+    <select name="books" id="books">
+      <option value="1 Móz">1 Móz</option>
+      <option value="2 Móz">2 Móz</option>
+      <option value="3 Móz">3 Móz</option>
+      <option value="4 Móz">4 Móz</option>
+      <option value="5 Móz">5 Móz</option>
+      <option value="Józs">Józs</option>
+      <option value="Bír">Bír</option>
+      <option value="Ruth">Ruth</option>
+      <option value="1 Sám">1 Sám</option>
+      <option value="2 Sám">2 Sám</option>
+      <option value="1 Kir">1 Kir</option>
+      <option value="2 Kir">2 Kir</option>
+      <option value="1 Krón">1 Krón</option>
+      <option value="2 Krón">2 Krón</option>
+      <option value="Ezsd">Ezsd</option>
+      <option value="Neh">Neh</option>
+      <option value="Eszt">Eszt</option>
+      <option value="Jób">Jób</option>
+      <option value="Zsolt">Zsolt</option>
+      <option value="Péld">Péld</option>
+      <option value="Préd">Préd</option>
+      <option value="Énekek">Énekek</option>
+      <option value="Ézs">Ézs</option>
+      <option value="Jer">Jer</option>
+      <option value="Jsir">Jsir</option>
+      <option value="Ez">Ez</option>
+      <option value="Dán">Dán</option>
+      <option value="Hós">Hós</option>
+      <option value="Jóel">Jóel</option>
+      <option value="Ámós">Ámós</option>
+      <option value="Abd">Abd</option>
+      <option value="Jón">Jón</option>
+      <option value="Mik">Mik</option>
+      <option value="Náh">Náh</option>
+      <option value="Hab">Hab</option>
+      <option value="Zof">Zof</option>
+      <option value="Hag">Hag</option>
+      <option value="Zak">Zak</option>
+      <option value="Mal">Mal</option>
+      <option value="Mt">Mt</option>
+      <option value="Mk">Mk</option>
+      <option value="Luk">Luk</option>
+      <option value="Ján">Ján</option>
+      <option value="ApCsel">ApCsel</option>
+      <option value="Róm">Róm</option>
+      <option value="1 Kor">1 Kor</option>
+      <option value="2 Kor">2 Kor</option>
+      <option value="Gal">Gal</option>
+      <option value="Ef">Ef</option>
+      <option value="Fil">Fil</option>
+      <option value="Kol">Kol</option>
+      <option value="1 Thessz">1 Thessz</option>
+      <option value="2 Thessz">2 Thessz</option>
+      <option value="1 Tim">1 Tim</option>
+      <option value="2 Tim">2 Tim</option>
+      <option value="Tit">Tit</option>
+      <option value="Filem">Filem</option>
+      <option value="Zsid">Zsid</option>
+      <option value="Jak">Jak</option>
+      <option value="1 Pét">1 Pét</option>
+      <option value="2 Pét">2 Pét</option>
+      <option value="1 Ján">1 Ján</option>
+      <option value="2 Ján">2 Ján</option>
+      <option value="3 Ján">3 Ján</option>
+      <option value="Júd">Júd</option>
+      <option value="Jel">Jel</option>
+    </select>
+
+    &nbsp;
+    <label for="chapter">chapter:</label>
+    <input type="text" id="chapter" value="1" maxlength="3" size="4" />
+    &nbsp;
+    <label for="verse">verse(s):</label>
+    <input type="text" id="verse" value="1" maxlength="3" size="4" />
+    &nbsp;-&nbsp;
+    <input type="text" id="verse2" value="" maxlength="3" size="4" />
+    <button onClick="fetchSingleQuote()">Frissít</button>
+
+    <br />
+    <br />
+    <div id="reference"></div>
+
+    <br />
+    <br />
+    <b>Magyar Bibliatársulat újfordítású Bibliája, 2014:</b>
+    <div id="napi_ige_ruf"></div>
+
+    <br />
+    <br />
+    <b>Revidiált Károli:</b>
+    <div id="napi_ige_kg"></div>
+
+    <script src="/napiige.js"></script>
+
+    <script>
+      function fetchSingleQuote() {
+        var bookList = document.getElementById("books");
+        var book = bookList.options[bookList.selectedIndex].value;
+        var chapter = document.getElementById("chapter").value.trim();
+        var verse = document.getElementById("verse").value.trim();
+        var verse2 = document.getElementById("verse2").value.trim();
+        var reference = book + ". " + chapter + ", " + verse;
+        if (verse2.length > 0) {
+          reference += "-" + verse2;
+        }
+        console.log(reference);
+        document.getElementById("reference").innerHTML = reference;
+
+        napi_ige_quote_locations = [reference];
+        napiIge({ quoteTarget: "napi_ige_kg", translation: "KG" });
+        napiIge({ quoteTarget: "napi_ige_ruf", translation: "RUF" });
+      }
+    </script>
+  </body>
+</html>

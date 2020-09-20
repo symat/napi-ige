@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Napi ige</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <a href="/index.html">go back</a>
+    <br />
+    <br />
+
+    <b>Ordered list:</b>
+    <br />
+    <div id="ordered"></div>
+    <br />
+    <br />
+
+    <script src="/napiige.js"></script>
+    <script src="./order.js"></script>
+
+    <script>
+      function printMD(array) {
+        var text = "<br/>Number of quotes: " + array.length + "<br/><br/>";
+        for (var i = 0; i < array.length; i++) {
+          text +=
+            "<br/><br/>**<span id='ige_" +
+            i +
+            "'></span>:** <span id='quote_" +
+            i +
+            "'></span>";
+        }
+        return text;
+      }
+
+      window.addEventListener("load", function () {
+        orderArray(napi_ige_quote_locations);
+        document.getElementById("ordered").innerHTML = printMD(
+          napi_ige_quote_locations
+        );
+        var date = new Date("1900-01-01");
+        for (var i = 0; i < napi_ige_quote_locations.length; i++) {
+          napiIge({
+            quoteTarget: "quote_" + i,
+            locationTarget: "ige_" + i,
+            translation: "RUF",
+            dateString: date
+          });
+          date.setDate(date.getDate() + 1);
+        }
+      });
+    </script>
+  </body>
+</html>

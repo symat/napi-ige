@@ -7,7 +7,7 @@
   </head>
 
   <body>
-    <a href="index.html">go back</a>
+    <a href="/index.html">go back</a>
     <br />
     <br />
 
@@ -22,11 +22,12 @@
     <br />
     <br />
 
-    <script src="napiige.js"></script>
+    <script src="/napiige.js"></script>
+    <script src="./order.js"></script>
 
     <script>
       function printOrderedArray() {
-        napi_ige_quote_locations.sort();
+        orderArray(napi_ige_quote_locations);
         return printArrayDefinition(napi_ige_quote_locations);
       }
 

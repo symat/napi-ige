@@ -7,13 +7,16 @@
   </head>
 
   <body>
-    <a href="test_cdn.html">click here to test the CDN version</a>
+    <b>testing tools:</b><br />
+    <a href="test_cdn.html">click here to test the CDN version</a><br />
+    <a href="/tools/randomize_order.html">
+      click here to generate a random ordered quote list
+    </a>
     <br />
+    <a href="/tools/fetch_quote.html">click here to fetch a single quote</a>
     <br />
-
-    <a href="randomize_order.html"
-      >click here to generate a random ordered quote list</a
-    >
+    <a href="/tools/generate_table.html">click here to list all quotes</a>
+    <br />
     <br />
     <br />
     <b>testing the development version:</b>
@@ -35,11 +38,17 @@
     <br />
     <br />
 
-    <b>Napi ige, adott datumra:</b>
+    <b>Napi ige, igehely külön kiemelve:</b>
+    <b><span id="napi_ige_target_loc"></span></b>
+    <div id="napi_ige_target_quote"></div>
+    <br />
+    <br />
+
+    <b>Napi ige, adott dátumra:</b>
     <div id="napi_ige_fix"></div>
     <input type="text" id="myref" value="1985-04-17" />
     <button
-      onClick="napi_ige('napi_ige_fix', 'KG', document.getElementById('myref').value)"
+      onClick="napiIge({quoteTarget:'napi_ige_fix', dateString: document.getElementById('myref').value})"
     >
       Frissít
     </button>
@@ -47,13 +56,17 @@
     <br />
     <br />
 
-    <script src="napiige.js"></script>
+    <script src="/napiige.js"></script>
     <script>
       window.addEventListener("load", function () {
-        napiIge("napi_ige");
-        napiIge("napi_ige_kg", "KG");
-        napiIge("napi_ige_ruf", "RUF");
-        napiIge("napi_ige_fix", "RUF", "1985-04-17");
+        napiIge({ quoteTarget: "napi_ige" });
+        napiIge({ quoteTarget: "napi_ige_kg", translation: "KG" });
+        napiIge({ quoteTarget: "napi_ige_ruf", translation: "RUF" });
+        napiIge({
+          quoteTarget: "napi_ige_target_quote",
+          locationTarget: "napi_ige_target_loc"
+        });
+        napiIge({ quoteTarget: "napi_ige_fix", dateString: "1985-04-17" });
       });
     </script>
   </body>
