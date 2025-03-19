@@ -12,7 +12,7 @@ The library is fetching the texts from the https://szentiras.hu, we owe thanks t
 
 ## Download
 
-The latest stable version is: `1.0.0`
+The latest stable version is: `1.0.1`
 
 You can use jsdelivr, a free CDN to download the minified javascript library:
 
@@ -61,7 +61,7 @@ You can find more examples about how to use the `napiIge()` function in the [ind
 
 ## Quotes
 
-In version 1.0.0, there are 489 quotes in the database. In the following list we print them using the default Bible translation (Magyar Bibliatársulat újfordítású Bibliája, 2014):
+In version 1.0.1, there are 489 quotes in the database. In the following list we print them using the default Bible translation (Magyar Bibliatársulat újfordítású Bibliája, 2014):
 
 **1 Móz. 4, 7:** Hiszen ha jól cselekszel, emelt fővel járhatsz. Ha pedig nem jól cselekszel, a bűn az ajtó előtt leselkedik, és rád vágyódik, de te uralkodjál rajta!
 
