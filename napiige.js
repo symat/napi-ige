@@ -572,7 +572,7 @@ function napiIge(params) {
   };
   xhr.open(
     "GET",
-    "https://szentiras.hu/api/idezet/" +
+    "https://regi.szentiras.hu/api/idezet/" +
       quote_location +
       "/" +
       params["translation"]
