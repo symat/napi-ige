@@ -507,7 +507,7 @@ function napiIgeGetQuoteLocationForDay(date) {
 var napi_ige_default_params = {
   quoteTarget: "napi_ige_ref",
   locationTarget: undefined,
-  translation: "RUF",
+  translation: "KG",
   dateString: "today",
   defaultQuote:
     "Bízzad az Úrra a te dolgaidat; és a te gondolatid véghez mennek.",
@@ -572,7 +572,7 @@ function napiIge(params) {
   };
   xhr.open(
     "GET",
-    "https://regi.szentiras.hu/api/idezet/" +
+    "https://szentiras.eu/api/idezet/" +
       quote_location +
       "/" +
       params["translation"]

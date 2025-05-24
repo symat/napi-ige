@@ -8,16 +8,16 @@ compatible even with the very old javascript standards.
 
 ## Special Thanks
 
-The library is fetching the texts from the https://szentiras.hu, we owe thanks to the maintainer of that site and API.
+The library is fetching the texts from the https://szentiras.hu, we owe thanks to the maintainer of that site and API. (currently using the szentiras.eu page)
 
 ## Download
 
-The latest stable version is: `1.0.1`
+The latest stable version is: `1.0.2`
 
 You can use jsdelivr, a free CDN to download the minified javascript library:
 
 ```
-   <script src="https://cdn.jsdelivr.net/gh/symat/napi-ige@1.0.0/napiige.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/symat/napi-ige@1.0.2/napiige.min.js"></script>
 ```
 
 Alternatively, by refrencing `1`, you will get the latest `1.x.y` version, which is always backward compatible with 1.0.0, but also contains extra features and bugfixes:
@@ -51,17 +51,17 @@ The function `napiIge` accepts a dictionary you can use to specify the following
 
 - `quoteTarget`: id of the DOM element where the quote should be loaded (default: `"napi_ige_ref"`)
 - `locationTarget`: id of the DOM element where the location (verse) should be loaded. If it is not defined, then the location will be printed after the quote, like: "<quoteText> (<verse>)". (default: `undefined`)
-- `translation`: id of the supported bible translations, see: https://szentiras.hu/forditasok (default: `"RUF"`)
+- `translation`: id of the supported bible translations, see: https://szentiras.eu/forditasok (default: `"KG"`)
 - `dateString`: date in ISO string format (e.g. `"1985-04-17"`), or `"today"` for the current date (default: `"today"`)
-- `defaultQuote`: the quote to show if any error happens during fetching the text from the Bible, e.g. if https://szentiras.hu is down (default: `"Bízzad az Úrra a te dolgaidat; és a te gondolatid véghez mennek."`)
-- `defaultLocation`: the location (verse) to show if any error happens during fetching the text from the Bible, e.g. if https://szentiras.hu is down (default: `"Péld. 16,3"`)
+- `defaultQuote`: the quote to show if any error happens during fetching the text from the Bible, e.g. if https://szentiras.eu is down (default: `"Bízzad az Úrra a te dolgaidat; és a te gondolatid véghez mennek."`)
+- `defaultLocation`: the location (verse) to show if any error happens during fetching the text from the Bible, e.g. if https://szentiras.eu is down (default: `"Péld. 16,3"`)
 - `loadingText`: the text to show until the quote is fetched (default: `"..."`)
 
 You can find more examples about how to use the `napiIge()` function in the [index.html](index.html).
 
 ## Quotes
 
-In version 1.0.1, there are 489 quotes in the database. In the following list we print them using the default Bible translation (Magyar Bibliatársulat újfordítású Bibliája, 2014):
+In version 1.0.2, there are 489 quotes in the database. In the following list we print them using the default Bible translation (Károli Gáspár revideált fordítása):
 
 **1 Móz. 4, 7:** Hiszen ha jól cselekszel, emelt fővel járhatsz. Ha pedig nem jól cselekszel, a bűn az ajtó előtt leselkedik, és rád vágyódik, de te uralkodjál rajta!
 

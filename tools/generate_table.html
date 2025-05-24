@@ -3,11 +3,11 @@
   <head>
     <title>Napi ige</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
   </head>
 
   <body>
-    <a href="/index.html">go back</a>
+    <a href="../index.html">go back</a>
     <br />
     <br />
 
@@ -17,8 +17,8 @@
     <br />
     <br />
 
-    <script src="/napiige.js"></script>
-    <script src="./order.js"></script>
+    <script src="../napiige.js"></script>
+    <script src="order.js"></script>
 
     <script>
       function printMD(array) {
@@ -44,7 +44,7 @@
           napiIge({
             quoteTarget: "quote_" + i,
             locationTarget: "ige_" + i,
-            translation: "RUF",
+            translation: "KG",
             dateString: date
           });
           date.setDate(date.getDate() + 1);
